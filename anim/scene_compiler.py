@@ -1,4 +1,5 @@
-from sys import os, subprocess
+import os
+import subprocess
 
 # helping function for concat_video
 def get_all_videos(): 
@@ -45,7 +46,6 @@ def concat_videos () -> None:
         os.remove(tmp_compile_file)
     except Exception as e:
         print(f"An error occurred: {e}") 
-
 
 create_video()
 concat_videos()

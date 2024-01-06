@@ -46,8 +46,8 @@ class SpongebobAndPatrickScene2(MovingCameraScene):
         # Add the racecars
         racecar1 = ImageMobject("img\RaceCar.png")
         racecar2 = ImageMobject("img\RaceCar_mirrored.png")
-        racecar1.scale(0.2)
-        racecar2.scale(0.2)
+        racecar1.scale(0.15)
+        racecar2.scale(0.15)
         racecar1.move_to(custom_graph.points[0])
         racecar2.move_to(custom_graph2.points[-1])
 
