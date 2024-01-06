@@ -2,7 +2,7 @@ from manim import *
 
 class ZeitstrahlScene(MovingCameraScene):
     def construct(self):
-        self.camera.background_color = WHITE
+        self.camera.background_color=GRAY_A
 
         ### Zeitstrahl erstellen
         timeline = NumberLine(

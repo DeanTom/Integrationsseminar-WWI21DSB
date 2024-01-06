@@ -1,3 +1,5 @@
+# Done by Christopher Wolf, WWI21DSB
+
 import os
 import subprocess
 
@@ -26,7 +28,7 @@ def create_video() -> None:
         
         # compile all the files
         for file in files:
-            subprocess.run(["manim", "-ql", file, "-a"], cwd=os.path.join(os.path.dirname(__file__), "..", "anim"))
+            subprocess.run(["manim", "-qh", file, "-a"], cwd=os.path.join(os.path.dirname(__file__), "..", "anim"))
 
     except Exception as e:
         print(f"An error occurred: {e}")
