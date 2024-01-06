@@ -1,4 +1,7 @@
-from sys import os, subprocess
+# Done by Christopher Wolf, WWI21DSB
+
+import os
+import subprocess
 
 # helping function for concat_video
 def get_all_videos(): 
@@ -25,7 +28,7 @@ def create_video() -> None:
         
         # compile all the files
         for file in files:
-            subprocess.run(["manim", "-ql", file, "-a"], cwd=os.path.join(os.path.dirname(__file__), "..", "anim"))
+            subprocess.run(["manim", "-qh", file, "-a"], cwd=os.path.join(os.path.dirname(__file__), "..", "anim"))
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -45,7 +48,6 @@ def concat_videos () -> None:
         os.remove(tmp_compile_file)
     except Exception as e:
         print(f"An error occurred: {e}") 
-
 
 create_video()
 concat_videos()
