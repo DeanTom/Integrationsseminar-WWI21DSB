@@ -56,20 +56,25 @@ class SpongebobAndPatrickScene1(MovingCameraScene):
             stroke_width=2,
         ).scale(1.5)
 
-        # Define the tracks for the other car so its visible
-        def custom_func2(x):
-            return np.where(x < 1, 1, np.where(1 <= x < 2, -x + 2, 0))
-
         custom_graph2 = FunctionGraph(
-            custom_func2,
+            custom_func,
             color=GRAY_A,
             x_range=[0, 3],
         ).scale(1.5)
-        graph_label = Tex("Let's do a race", color=BLACK, font_size = 25).next_to(custom_graph, DOWN * 3)
+
+        custom_graph3 = FunctionGraph(
+            custom_func,
+            color=GRAY_A,
+            x_range=[0, 3],
+        ).scale(1.5)
 
         custom_graph.center()
         custom_graph2.center()
-        custom_graph2.shift(UP * 0.2)
+        custom_graph3.center()
+        custom_graph2.shift(UP * 0.15)
+        custom_graph3.shift(UP * 0.3)
+
+        graph_label = Tex("Let's do a race", color=BLACK, font_size = 25).next_to(custom_graph, DOWN * 3)
 
         # Move the images to the top left corner
         spongebob_animation_to_corner = AnimationGroup(
@@ -90,7 +95,7 @@ class SpongebobAndPatrickScene1(MovingCameraScene):
         # Add the animations to the scene
         # self.play(animations)
         self.play(animations, self.camera.frame.animate.set(width=custom_graph.get_width() * 1.8))
-        self.play(Create(custom_graph), Create(custom_graph2), Write(graph_label))
+        self.play(Create(custom_graph), Create(custom_graph2), Create(custom_graph3), Write(graph_label))
         self.wait(3)
         self.play(FadeOut(graph_label))
         self.wait(1)
@@ -100,8 +105,8 @@ class SpongebobAndPatrickScene1(MovingCameraScene):
         racecar2 = ImageMobject("img\RaceCar.png")
         racecar1.scale(0.15)
         racecar2.scale(0.15)
-        racecar1.move_to(custom_graph.points[0])
-        racecar2.move_to(custom_graph2.points[0])
+        racecar1.move_to(custom_graph2.points[0])
+        racecar2.move_to(custom_graph3.points[0])
 
         # # Add the finish flag
         # finish_flag = ImageMobject("img\racing_pole.png")
@@ -120,7 +125,7 @@ class SpongebobAndPatrickScene1(MovingCameraScene):
         self.play(ReplacementTransform(start_text, start_text2))
         self.play(ReplacementTransform(start_text2, start_text3))
         self.play(ReplacementTransform(start_text3, start_text4))
-        self.play(FadeOut(start_text4), MoveAlongPath(racecar1, custom_graph, rate_func=smooth), MoveAlongPath(racecar2, custom_graph2, rate_func=smooth), run_time=3)
+        self.play(FadeOut(start_text4), MoveAlongPath(racecar1, custom_graph2, rate_func=smooth), MoveAlongPath(racecar2, custom_graph3, rate_func=smooth), run_time=3)
         self.wait(1)
         self.wait(1)
 
@@ -130,7 +135,7 @@ class SpongebobAndPatrickScene1(MovingCameraScene):
         self.wait(1)
         
         # Add all objects to a list
-        objects = [spongebob, patrick, custom_graph, custom_graph2, racecar1, racecar2, graph_label2]
+        objects = [spongebob, patrick, custom_graph, custom_graph2, custom_graph3, racecar1, racecar2, graph_label2]
 
         # Fade out all objects
         self.play(*[FadeOut(obj) for obj in objects])

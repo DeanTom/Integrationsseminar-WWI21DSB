@@ -84,6 +84,4 @@ def build_video(quality: str) -> None:
     except Exception as e:
         print(f"An error occurred: {e}")
 
-create_video(quality="low")
 concat_videos()
-play_video()

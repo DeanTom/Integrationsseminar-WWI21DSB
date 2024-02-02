@@ -20,3 +20,9 @@ class Scale1(Scene):
         self.play(Rotate(moving_object, angle=-PI/18, about_point=ORIGIN, run_time=1))
         self.play(Rotate(moving_object, angle=PI/36, about_point=ORIGIN, run_time=1))
         self.wait(2)
+
+          # Add all objects to a list
+        objects = [moving_object, triangle]
+
+        # Fade out all objects
+        self.play(*[FadeOut(obj) for obj in objects])

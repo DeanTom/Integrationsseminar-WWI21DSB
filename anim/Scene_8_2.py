@@ -12,8 +12,7 @@ class Scale2(Scene):
         triangle = Polygon(LEFT * 2, RIGHT * 2, UP * 3, color=BLACK).shift(DOWN * 3)
 
         self.camera.background_color=GRAY_A
-        self.add(moving_object)
-        self.add(triangle)
+        self.play(FadeIn(moving_object), FadeIn(triangle))
         self.play(Rotate(moving_object, angle=PI/12, about_point=ORIGIN, run_time=1))
         self.play(Rotate(moving_object, angle=-PI/7, about_point=ORIGIN, run_time=1))
         self.play(Rotate(moving_object, angle=PI/10, about_point=ORIGIN, run_time=1))
@@ -21,4 +20,11 @@ class Scale2(Scene):
         self.play(Rotate(moving_object, angle=PI/15, about_point=ORIGIN, run_time=1))
         self.play(Rotate(moving_object, angle=-PI/18, about_point=ORIGIN, run_time=1))
         self.play(Rotate(moving_object, angle=PI/36, about_point=ORIGIN, run_time=1))
+        self.wait(2)
+
+        # Add all objects to a list
+        objects = [moving_object, triangle]
+
+        # Fade out all objects
+        self.play(*[FadeOut(obj) for obj in objects])
         self.wait(2)
