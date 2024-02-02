@@ -5,6 +5,13 @@ import subprocess
 import shutil
 
 def create_video(quality: str) -> None:
+    '''
+    Generates a video file for all .py files in the anim folder.
+
+    Args: 
+        quality (str): The quality of the video. Can be "low", "medium", "high" or "ultra"
+    
+    '''
     quality_flag = ""
     if quality == "low":
         quality_flag = "-ql"
@@ -45,6 +52,10 @@ def get_all_videos():
     
 # concatenate the videos 
 def concat_videos () -> None:
+    '''
+    Concatinate all video-files created by create_video() in the anim folder into one .mp4 file.
+    
+    '''
     try:
         files = get_all_videos()
         anim_folder = os.path.join(os.path.dirname(__file__), "..", "anim")
@@ -65,6 +76,11 @@ def concat_videos () -> None:
         print(f"An error occurred: {e}") 
 
 def play_video() -> None:
+    '''
+    Play the created video-file in-window.
+    Not needed, video can also be played from the folder directly.
+
+    '''
     video_height = 800
     video_width = 1200
     try:
@@ -85,3 +101,5 @@ def build_video(quality: str) -> None:
         print(f"An error occurred: {e}")
 
 concat_videos()
+
+
