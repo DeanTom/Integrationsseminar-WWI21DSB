@@ -100,4 +100,4 @@ def build_video(quality: str) -> None:
     except Exception as e:
         print(f"An error occurred: {e}")
 
-concat_videos()
+create_video("high")

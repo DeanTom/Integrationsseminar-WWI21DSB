@@ -10,7 +10,10 @@ class Scene_7_2(MovingCameraScene):
 
         # Create dots A and B
         dot_A = Dot(color=BLACK).move_to(UP*2+LEFT*4) 
-        dot_B = Dot(color=BLACK).move_to(DOWN*2+RIGHT*4) 
+        dot_B = Dot(color=BLACK).move_to(DOWN*2+RIGHT*4)
+
+        dot_A.z_index = 1
+        dot_B.z_index = 1 
 
         # Label dots
         label_A = Tex("A", color=BLACK).next_to(dot_A, UP)

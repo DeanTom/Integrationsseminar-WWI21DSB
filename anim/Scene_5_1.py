@@ -2,11 +2,11 @@ from manim import *
 
 class Scene_5_1(MovingCameraScene):
     def construct(self):
-        shortest_text = Text("SHORTEST", color=GREEN)
+        shortest_text = Text("SHORTEST", color=BLUE)
         time_text = Text("TIME?", color=RED)
         full_shortest_time_text = VGroup(shortest_text, time_text).arrange(RIGHT)
 
-        brachisto_text = Text("BRACHISTO", color=GREEN)
+        brachisto_text = Text("BRACHISTO", color=BLUE)
         brachisto_text.shift(UP + LEFT * 3)
         chrone_text = Text("CHRONE", color=RED)
         chrone_text.shift(UP + RIGHT * 3)

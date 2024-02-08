@@ -84,8 +84,8 @@ class Scene2(MovingCameraScene):
         )
 
         line_length1 = custom_graph.get_width()
-        line1 = Line(LEFT * line_length1 / 2, RIGHT * line_length1 / 2, color=RED, stroke_width=2)  
-        line2 = Line(LEFT * line_length1 / 2, RIGHT * line_length1 * 0.6, color=BLUE, stroke_width=2)
+        line1 = Line(LEFT * line_length1 / 2, RIGHT * line_length1 / 2, color=BLUE, stroke_width=2)  
+        line2 = Line(LEFT * line_length1 / 2, RIGHT * line_length1 * 0.6, color=RED, stroke_width=2)
 
         # Position the line below custom_graph
         line1.next_to(custom_graph, DOWN, buff=0.5)  

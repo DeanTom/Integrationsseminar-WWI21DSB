@@ -3,7 +3,7 @@ from manim import*
 class Scene_5_2(MovingCameraScene):
     def construct(self):
         # Erstelle die Waage
-        short_text = Text("Short", color=GREEN).shift(LEFT * 3 + UP * 0.5)
+        short_text = Text("Short", color=BLUE).shift(LEFT * 3 + UP * 0.5)
         steep_text = Text("Steep", color=RED).shift(RIGHT * 3 + UP * 0.5)
         horizontal_line = Line(LEFT * 4, RIGHT * 4, color=BLACK)
         moving_object = VGroup(short_text, steep_text, horizontal_line)

@@ -7,6 +7,9 @@ class Scene_7_3(MovingCameraScene):
         point_a = Dot(UP * 2.5 + LEFT * 5, color=BLACK)
         point_b = Dot(RIGHT * 5, color=BLACK)
 
+        point_a.z_index = 1
+        point_b.z_index = 1
+
         label_a = Tex("A", color=BLACK).next_to(point_a, UP)
         label_b = Tex("B", color=BLACK).next_to(point_b, UP)
 
