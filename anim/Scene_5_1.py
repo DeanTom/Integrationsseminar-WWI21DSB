@@ -1,6 +1,6 @@
 from manim import *
 
-class ColoredTextExample(MovingCameraScene):
+class Scene_5_1(MovingCameraScene):
     def construct(self):
         shortest_text = Text("SHORTEST", color=GREEN)
         time_text = Text("TIME?", color=RED)

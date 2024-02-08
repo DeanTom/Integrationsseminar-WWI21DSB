@@ -1,6 +1,6 @@
 from manim import *
 
-class SpongebobAndPatrickScene2(MovingCameraScene):
+class Scene2(MovingCameraScene):
      def construct(self):
         self.camera.background_color=GRAY_A
 

@@ -1,8 +1,8 @@
 from manim import *
 
-class ZeitstrahlScene(MovingCameraScene):
+class Scene_6(MovingCameraScene):
     def construct(self):
-        self.camera.background_color = WHITE
+        self.camera.background_color = GRAY_A
 
         ### Zeitstrahl erstellen
         timeline = NumberLine(
@@ -56,6 +56,7 @@ class ZeitstrahlScene(MovingCameraScene):
         dot2 = Dot(point2, color=BLACK).scale(0.7)
         dot1text = Tex("A", color=BLACK).scale(0.3).next_to(dot1, DOWN/2)
         dot2text = Tex("B", color=BLACK).scale(0.3).next_to(dot2, DOWN/2)
+        
         # Linie zwischen Punkten
         arc = Arc(
             start_angle=5 * PI / 4, 

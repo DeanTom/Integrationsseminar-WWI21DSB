@@ -1,6 +1,6 @@
 from manim import*
 
-class Scale1(Scene):
+class Scene_5_2(MovingCameraScene):
     def construct(self):
         # Erstelle die Waage
         short_text = Text("Short", color=GREEN).shift(LEFT * 3 + UP * 0.5)

@@ -1,6 +1,6 @@
 from manim import *
 
-class StraightAndCurvedDownwardLine(Scene):
+class Scene_4_1(MovingCameraScene):
     def construct(self):
         # Definition der Hintergrundfarbe
         self.camera.background_color=GRAY_A
@@ -41,7 +41,7 @@ class StraightAndCurvedDownwardLine(Scene):
         graph1 = ax1.plot(func1, color=BLACK)
 
         initial_point1 = [ax1.coords_to_point(t1.get_value(), func1(t1.get_value()))]
-        dot1 = Dot(point=initial_point1, color=GREEN)
+        dot1 = Dot(point=initial_point1, color=BLUE)
         dot1.scale(1.2)
 
         dot1.add_updater(lambda x: x.move_to(ax1.c2p(t1.get_value(), func1(t1.get_value()))))
@@ -61,7 +61,7 @@ class StraightAndCurvedDownwardLine(Scene):
         graph2 = ax2.plot(func2, color=BLACK)
 
         initial_point2 = [ax2.coords_to_point(t2.get_value(), func2(t2.get_value()))]
-        dot2 = Dot(point=initial_point2, color=GREEN)
+        dot2 = Dot(point=initial_point2, color=BLUE)
         dot2.scale(1.2)
 
         dot2.add_updater(lambda y: y.move_to(ax2.c2p(t2.get_value(), func2(t2.get_value()))))

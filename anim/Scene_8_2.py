@@ -1,6 +1,6 @@
 from manim import *
 
-class Scale2(Scene):
+class Scene_8_2(MovingCameraScene):
     def construct(self):
         # Erstelle die Waage
         water_text = Text("Minimal Time in Water", color=GREEN).shift(LEFT * 2.5 + UP * 0.5)
@@ -22,9 +22,7 @@ class Scale2(Scene):
         self.play(Rotate(moving_object, angle=PI/36, about_point=ORIGIN, run_time=1))
         self.wait(2)
 
-        # Add all objects to a list
-        objects = [moving_object, triangle]
-
         # Fade out all objects
+        objects = [moving_object, triangle]
         self.play(*[FadeOut(obj) for obj in objects])
         self.wait(2)

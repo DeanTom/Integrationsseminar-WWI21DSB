@@ -101,5 +101,3 @@ def build_video(quality: str) -> None:
         print(f"An error occurred: {e}")
 
 concat_videos()
-
-

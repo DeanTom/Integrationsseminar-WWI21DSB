@@ -1,6 +1,6 @@
 from manim import *
 
-class LoopingScene(MovingCameraScene):
+class Scene_4_3(MovingCameraScene):
     def construct(self):
         self.camera.background_color=GRAY_A
 
