@@ -66,3 +66,4 @@ class Scene_7_2(MovingCameraScene):
         # Fade out 
         objects = [lower_background, axes, x_label, header_text, dot_A, label_A, dot_B, label_B, dot_on_line, A_to_middle, Middle_to_B, graph]
         self.play(*[FadeOut(obj) for obj in objects])
+        self.wait(1)

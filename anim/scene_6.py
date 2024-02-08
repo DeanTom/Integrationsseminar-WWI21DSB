@@ -72,8 +72,8 @@ class Scene_6(MovingCameraScene):
         triangle.next_to(arc.get_center(), 3/4 * UP + RIGHT/4)
         horizontal_line = Line(start=triangle.get_top() + LEFT*4, end=triangle.get_top() + RIGHT*4, color=BLACK, stroke_width=1).scale(0.1)
         horizontal_line.shift(0.01 * UP)
-        short_text = Tex("Short", color=BLUE).scale(0.2).next_to(horizontal_line.get_start(), 0.09 * UP)
-        steep_text = Tex("Steep", color=RED).scale(0.2).next_to(horizontal_line.get_end(), 0.03 * UP)
+        short_text = Tex("Short", color=RED).scale(0.2).next_to(horizontal_line.get_start(), 0.09 * UP)
+        steep_text = Tex("Steep", color=BLUE).scale(0.2).next_to(horizontal_line.get_end(), 0.03 * UP)
         moving_object = VGroup(short_text, steep_text, horizontal_line)
 
 
@@ -126,4 +126,4 @@ class Scene_6(MovingCameraScene):
 
         # Fade out all objects
         self.play(*[FadeOut(obj) for obj in objects])
-        self.wait(2)
+        self.wait(1)

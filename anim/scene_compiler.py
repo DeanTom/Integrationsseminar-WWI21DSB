@@ -9,7 +9,7 @@ def create_video(quality: str) -> None:
     Generates a video file for all .py files in the anim folder.
 
     Args: 
-        quality (str): The quality of the video. Can be "low", "medium", "high" or "ultra"
+        quality (str): The quality of the video. Can be set to "low", "medium", "high" or "ultra"
     
     '''
     quality_flag = ""
@@ -53,7 +53,7 @@ def get_all_videos():
 # concatenate the videos 
 def concat_videos () -> None:
     '''
-    Concatinate all video-files created by create_video() in the anim folder into one .mp4 file.
+    Concatinates all video-files created by create_video() in the anim folder into one .mp4 file.
     
     '''
     try:
@@ -77,7 +77,7 @@ def concat_videos () -> None:
 
 def play_video() -> None:
     '''
-    Play the created video-file in-window.
+    Plays the created video-file in-window.
     Not needed, video can also be played from the folder directly.
 
     '''
@@ -100,4 +100,6 @@ def build_video(quality: str) -> None:
     except Exception as e:
         print(f"An error occurred: {e}")
 
-create_video("high")
+# create_video("high")
+concat_videos()
+# play_video()
